@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('drosophilas', function (Blueprint $table) {
             $table->id();
-            $table->string('male');
-            $table->string('female');
-            $table->string('cross');
+            $table->text('main');
+            $table->text('mixed');
+            $table->text('show');
+            $table->text('type');
             $table->timestamps();
         });
     }

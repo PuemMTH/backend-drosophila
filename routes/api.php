@@ -21,10 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/login', 'AuthController@login');
 
-// Route::get('/drosophila', []);
 Route::get('/drosophila', [DrosophilaController::class, 'index']);
+Route::post('/drosophila', [DrosophilaController::class, 'create']);
+Route::delete('/drosophila/{id}', [DrosophilaController::class, 'delete']);
+Route::get('/drosophila/mixed', [DrosophilaController::class, 'mixed']);
 
-// error handler route
 Route::fallback(function(){
     return response()->json([
         'message' => 'Page Not Found. If error persists, contact',
